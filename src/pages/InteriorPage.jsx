@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroSection from '../interior/HeroSection.jsx';
-import WyChooseUs from '../interior/WyChooseUs.jsx';
+import WyChooseUS from '../interior/WyChooseUS.jsx';
 import ApproachCards from '../interior/ApproachCards.jsx';
 import PricingSection from '../interior/PricingSection.jsx';
 import ProjectShowcase from '../interior/ProjectShowcase.jsx'
@@ -14,7 +14,7 @@ export default function InteriorPage() {
       
       <div>
         <HeroSection />
-        <WyChooseUs />
+        <WyChooseUS />
         <ApproachCards />
         <PricingSection />
         <ProjectShowcase />

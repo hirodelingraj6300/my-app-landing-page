@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './WyChooseUs.module.css';
+import styles from './WyChooseUS.module.css';
 
 const ITEMS = [
   { title: 'Happy Clients', desc: '500+ delighted homeowners', icon: '🎉' },
