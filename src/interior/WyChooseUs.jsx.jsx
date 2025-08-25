@@ -9,7 +9,7 @@ const ITEMS = [
   { title: 'No Hidden Cost', desc: 'Transparent pricing always', icon: '💰' },
 ];
 
-export default function WyChooseUS() {
+export default function WyChooseUs() {
   return (
     <section id="why-us" className={styles.why}>
       <div className={styles.container}>
