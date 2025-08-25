@@ -1,0 +1,49 @@
+/* components/construction/WyChooseUs.module.css */
+.whyChooseUs {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f9fafb;
+}
+
+.whyChooseUs h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #1f2937;
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reasonCard {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.reasonCard:hover {
+  transform: translateY(-10px);
+}
+
+.reasonCard img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.reasonCard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.reasonCard p {
+  font-size: 1rem;
+  color: #4b5563;
+}

@@ -1,0 +1,108 @@
+/* ---------- Section ---------- */
+.approach {
+  background: #fff;
+  padding: 80px 20px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ---------- Heading ---------- */
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+/* ---------- Grid ---------- */
+.approachGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .approachGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ---------- Card ---------- */
+.approachCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform .2s ease, box-shadow .2s ease;
+  border-top: 4px solid transparent;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.approachCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+/* Step-specific border colors */
+.step1 {
+  border-top-color: #3b82f6; /* blue */
+}
+
+.step2 {
+  border-top-color: #f97316; /* orange */
+}
+
+.step3 {
+  border-top-color: #22c55e; /* green */
+}
+
+/* ---------- Badge ---------- */
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 4px 12px;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ---------- Card Content ---------- */
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #555;
+  max-width: 280px;
+}

@@ -1,0 +1,131 @@
+/* ---------- Section ---------- */
+.pricing {
+  background: #fafafa;
+  padding: 80px 20px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+/* ---------- Grid ---------- */
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .pricingGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ---------- Card ---------- */
+.priceCard {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
+  padding: 40px 32px 48px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.priceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Accent Borders ---------- */
+.accent-yellow { border-top: 6px solid #ffb800; }
+.accent-teal   { border-top: 6px solid #0ca678; }
+.accent-blue   { border-top: 6px solid #1e88e5; }
+
+/* ---------- Card Content ---------- */
+.priceCard h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.price small {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  margin-left: 4px;
+}
+
+.priceCard ul {
+  list-style: none;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.priceCard li {
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #444;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.priceCard li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #111;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.btn-primary {
+  background: #111;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #333;
+}

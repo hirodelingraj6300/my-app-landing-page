@@ -1,0 +1,71 @@
+/* 1. pull strip up over hero */
+.featureStrip {
+  position: relative;
+  margin-top: -100px;
+  z-index: 5;
+}
+
+/* 2. hard 3-col grid (no media query fallback) */
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 3. white card */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.body h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.body p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.btn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: #e67e22;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #d2691e;
+}
+
+/* 4. small-screen safety (optional) */
+@media (max-width: 768px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,44 @@
+/* ---------- section ---------- */
+.section {
+  padding: 64px 20px;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- 4-column grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- single stat ---------- */
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.number {
+  font-size: clamp(2rem, 1.4rem + 1.8vw, 2.75rem);
+  font-weight: 800;
+  color: #e67e22;
+  line-height: 1;
+}
+
+.label {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #555;
+}

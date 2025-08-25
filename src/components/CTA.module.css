@@ -1,0 +1,43 @@
+/* ---------- section ---------- */
+.section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f1115, #1b1f2a);
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- typography ---------- */
+.heading {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.sub {
+  margin: 0 0 32px;
+  font-size: 1.1rem;
+  color: #e6eaf5;
+}
+
+/* ---------- button ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 8px;
+  background: #e67e22;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.btn:hover {
+  background: #d2691e;
+}

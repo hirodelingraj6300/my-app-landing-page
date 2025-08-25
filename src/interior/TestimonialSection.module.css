@@ -1,0 +1,95 @@
+/* ---------- SECTION ---------- */
+.testimonials {
+  background: #0f172a; /* dark navy */
+  padding: 80px 20px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADINGS ---------- */
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #94a3b8; /* muted gray-blue */
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+/* ---------- GRID ---------- */
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 360px;
+  padding: 36px 32px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.04);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- QUOTE ---------- */
+.quote {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f1f5f9; /* light text */
+  margin-bottom: 24px;
+}
+
+/* ---------- AUTHOR ---------- */
+.author {
+  font-size: 16px;
+  font-weight: 500;
+  color: #cbd5e1; /* soft gray */
+}
+
+.author span {
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 900px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}

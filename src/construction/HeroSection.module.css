@@ -1,0 +1,53 @@
+/* components/construction/HeroSection.module.css */
+.hero {
+  height: 100vh;
+  background: url("/Const_img/build_8.jpg") no-repeat center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroOverlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroContent {
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.ctaBtn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #f97316;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ctaBtn:hover {
+  background: #ea580c;
+}

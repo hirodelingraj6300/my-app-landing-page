@@ -1,0 +1,92 @@
+/* ---------- Global Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Section Wrapper ---------- */
+.why {
+  background-color: #fefefe;
+  padding: 80px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- Heading Area ---------- */
+.sectionTitle {
+  font-size: 2.25rem;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ---------- Grid Layout ---------- */
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+/* ---------- Card ---------- */
+.whyCard {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Card Content ---------- */
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: 0.9375rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 600px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+
+  .whyGrid {
+    gap: 24px;
+  }
+}
