@@ -55,7 +55,7 @@ const Header = () => {
             <div className={`${styles.dropdownContent} ${dropdownOpen ? styles.show : ""}`}>
               <Link to="/construction">Construction</Link>
               <Link to="/interiors">Interiors</Link>
-              <Link to="/interiors">Vastu</Link>
+              <Link to="/vastu">Vastu</Link>
             </div>
           </div>
         </nav>

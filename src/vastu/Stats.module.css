@@ -1,0 +1,147 @@
+/* src/components/Stats/Stats.module.css */
+
+/* ---------- 1. Lightweight color tokens ---------- */
+:root {
+  --bg: #f9fafb;            /* very light grey */
+  --bg-soft: #eef1f5;       /* subtle tint for gradient */
+  --accent: #4f46e5;        /* indigo */
+  --accent-glow: #818cf8;   /* lighter indigo */
+  --text: #111827;          /* near-black */
+  --text-muted: #6b7280;    /* mid grey */
+}
+
+/* ---------- 2. Section ---------- */
+.stats {
+  width: 100%;
+  padding: clamp(4rem, 8vw, 8rem) 1.5rem;
+  background: linear-gradient(
+      135deg,
+      var(--bg) 0%,
+      var(--bg-soft) 100%
+  );
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.sub {
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto 4rem;
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* ---------- 3. Grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  padding: 2.5rem 2rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* light border */
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.08);
+  }
+}
+
+.value {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.unit {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--accent-glow);
+  margin-left: 0.25rem;
+}
+
+.label {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* ======================
+   Responsive Design
+====================== */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .stats {
+    padding: 3.5rem 1rem;
+  }
+
+  .sub {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .stats {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .sub {
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* stack all cards */
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .value, .unit {
+    font-size: 2rem;
+  }
+
+  .label {
+    font-size: 0.9rem;
+  }
+}

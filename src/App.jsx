@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
 import InteriorPage from "./pages/InteriorPage";
 import ConstructionPage from "./pages/ConstructionPage";
+import VastuPage from "./pages/VastuPage";
 
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/construction" element={<ConstructionPage />} />
         <Route path="/interiors" element={<InteriorPage />} />
-        {/* <Route path="/vastu" element={<VastuPage />} /> */}
+        <Route path="/vastu" element={<VastuPage />} />
       </Routes>
     </Router>
   );
