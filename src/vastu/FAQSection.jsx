@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./FAQSection.module.css";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
@@ -17,7 +18,7 @@ const faqs = [
     answer:
       "Positive results are often seen within 9 to 180 days depending on the corrections made and individual circumstances.",
   },
-   {
+  {
     question: "Can Vastu be applied to modern apartments and offices?",
     answer:
       "Yes, Vastu principles can be adapted to contemporary spaces, ensuring balance and prosperity even in modern designs.",
@@ -48,7 +49,10 @@ export default function FAQSection() {
         {faqs.map((faq, i) => (
           <div key={i} className={styles.faqItem}>
             <button className={styles.question} onClick={() => toggleFAQ(i)}>
-              {faq.question}
+              <span>{faq.question}</span>
+              <span className={styles.arrow}>
+                {openIndex === i ? <FaChevronUp /> : <FaChevronDown />}
+              </span>
             </button>
             {openIndex === i && <p className={styles.answer}>{faq.answer}</p>}
           </div>
