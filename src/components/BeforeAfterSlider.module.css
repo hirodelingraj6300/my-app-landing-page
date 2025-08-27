@@ -79,3 +79,60 @@
   box-shadow: 0 0 0 3px #fff;
   cursor: pointer;
 }
+
+/* ---------- responsive typography & slider adjustments ---------- */
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .sub {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .slider {
+    max-width: 100%;
+    aspect-ratio: 4 / 3; /* taller for small screens */
+  }
+
+  .range {
+    width: 80%; /* make range easier to grab on mobile */
+  }
+
+  .range::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section {
+    padding: 50px 20px;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .sub {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .slider {
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .range {
+    width: 70%;
+  }
+}

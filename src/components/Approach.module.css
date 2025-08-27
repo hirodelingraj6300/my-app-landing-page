@@ -25,14 +25,22 @@
   color: #555;
 }
 
-/* ---------- 4-column grid ---------- */
+/* ---------- grid ---------- */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* mobile default */
   gap: 24px;
 }
 
-@media (min-width: 768px) {
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop & desktop */
+@media (min-width: 1025px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -74,4 +82,60 @@
   font-size: 0.95rem;
   color: #555;
   line-height: 1.5;
+}
+
+/* ---------- responsive typography & spacing ---------- */
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .sub {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section {
+    padding: 50px 20px;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .sub {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 24px 18px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
 }

@@ -41,3 +41,48 @@
 .btn:hover {
   background: #d2691e;
 }
+
+/* ---------- responsive ---------- */
+
+/* tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .section {
+    padding: 64px 16px;
+  }
+
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .sub {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+/* mobile (≤768px) */
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 14px;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .sub {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}

@@ -5,7 +5,7 @@
   z-index: 5;
 }
 
-/* 2. hard 3-col grid (no media query fallback) */
+/* 2. hard 3-col grid (default desktop) */
 .wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -63,9 +63,51 @@
   background: #d2691e;
 }
 
-/* 4. small-screen safety (optional) */
+/* ---------- responsive ---------- */
+
+/* tablet (≤1024px): switch to 2-col grid */
+@media (max-width: 1024px) {
+  .wrap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .body h3 {
+    font-size: 1.15rem;
+  }
+
+  .body p {
+    font-size: 0.9rem;
+  }
+}
+
+/* mobile (≤768px): single column stack */
 @media (max-width: 768px) {
   .wrap {
     grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .body {
+    padding: 20px;
+  }
+
+  .body h3 {
+    font-size: 1.1rem;
+  }
+
+  .body p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
   }
 }

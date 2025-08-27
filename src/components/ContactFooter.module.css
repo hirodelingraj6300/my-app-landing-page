@@ -4,6 +4,7 @@
   color: #e6eaf5;
 }
 
+/* ---------- wrapper ---------- */
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -19,6 +20,13 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 2fr 1fr; /* form larger, map smaller on laptops */
+    gap: 60px;
+  }
+}
+
 /* column titles */
 .left h3,
 .right h3 {
@@ -28,7 +36,7 @@
   color: #fff;
 }
 
-/* form */
+/* ---------- form ---------- */
 .form {
   display: grid;
   gap: 14px;
@@ -66,7 +74,7 @@
   background: #d2691e;
 }
 
-/* map */
+/* ---------- map ---------- */
 .map {
   width: 100%;
   height: 220px;
@@ -75,7 +83,19 @@
   margin-top: 12px;
 }
 
-/* bottom bar */
+@media (min-width: 768px) {
+  .map {
+    height: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .map {
+    height: 320px;
+  }
+}
+
+/* ---------- bottom bar ---------- */
 .bottom {
   max-width: 1200px;
   margin: 0 auto;
@@ -95,6 +115,7 @@
   }
 }
 
+/* ---------- links ---------- */
 .links {
   display: flex;
   gap: 16px;
@@ -107,4 +128,43 @@
 
 .links a:hover {
   color: #e67e22;
+}
+
+/* ---------- mobile adjustments ---------- */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 40px 16px 20px;
+    gap: 28px;
+  }
+
+  .left h3,
+  .right h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .form input,
+  .form textarea {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  .map {
+    height: 200px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .links {
+    justify-content: center;
+  }
 }

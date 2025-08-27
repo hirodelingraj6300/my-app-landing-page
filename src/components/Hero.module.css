@@ -48,6 +48,7 @@ html, body {
   align-items: center;
   color: #fff;
   padding-left: 0;
+  text-align: center;
 }
 
 .heroContent h1 {
@@ -65,7 +66,9 @@ html, body {
 .heroActions {
   display: flex;
   gap: 12px;
-  margin-left: -20px; 
+  margin-left: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
@@ -117,4 +120,82 @@ html, body {
 }
 .next {
   right: 20px;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Laptop (1024px and below) */
+@media (max-width: 1024px) {
+  .heroSlide {
+    height: 80vh;
+  }
+
+  .heroContent h1 {
+    font-size: 2.4rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+    max-width: 500px;
+  }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .heroSlide {
+    height: 75vh;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroContent p {
+    font-size: 0.95rem;
+    padding: 0 15px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .prev, .next {
+    width: 0px;
+    height: 38px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .heroSlide {
+    height: 70vh;
+  }
+
+  .heroContent h1 {
+    font-size: 1.6rem;
+  }
+
+  .heroContent p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .prev, .next {
+    width: 0px;
+    height: 32px;
+    font-size: 16px;
+  }
 }
