@@ -32,34 +32,70 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // ✅ Close dropdown + menu after clicking a link
+  const handleNavClick = () => {
+    setDropdownOpen(false);
+    setMenuOpen(false);
+  };
+
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.navbarContainer}>
+        {/* Logo */}
         <div className={styles.logo}>
           <img src="/img/logo_43.png" alt="" className={styles.logoImg} />
           <span> Constructions</span>
         </div>
 
-        <button className={styles.hamburger} onClick={() => setMenuOpen((p) => !p)}>☰</button>
+        {/* Mobile Hamburger */}
+        <button
+          className={styles.hamburger}
+          onClick={() => setMenuOpen((p) => !p)}
+        >
+          ☰
+        </button>
 
-        <nav className={`${styles.navLinks} ${menuOpen ? styles.active : ""}`} ref={menuRef}>
-          <Link to="/">Home</Link>
-          <a href="#gallery">Gallery</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact Us</a>
+        {/* Navigation Links */}
+        <nav
+          className={`${styles.navLinks} ${menuOpen ? styles.active : ""}`}
+          ref={menuRef}
+        >
+          <Link to="/" onClick={handleNavClick}>Home</Link>
+          <a href="#gallery" onClick={handleNavClick}>Gallery</a>
+          <a href="#about" onClick={handleNavClick}>About Us</a>
+          <a href="#contact" onClick={handleNavClick}>Contact Us</a>
 
+          {/* Dropdown */}
           <div className={styles.dropdown} ref={dropdownRef}>
-            <button className={styles.dropbtn} onClick={() => setDropdownOpen((p) => !p)}>
+            <button
+              type="button"   // ✅ prevents page jump
+              className={styles.dropbtn}
+              onClick={() => {
+                console.log("Clicked Services!");
+                setDropdownOpen((p) => !p);
+              }}
+            >
               Services ▾
             </button>
-            <div className={`${styles.dropdownContent} ${dropdownOpen ? styles.show : ""}`}>
-              <Link to="/construction">Construction</Link>
-              <Link to="/interiors">Interiors</Link>
-              <Link to="/vastu">Vastu</Link>
+            <div
+              className={`${styles.dropdownContent} ${
+                dropdownOpen ? styles.show : ""
+              }`}
+            >
+              <Link to="/construction" onClick={handleNavClick}>
+                Construction
+              </Link>
+              <Link to="/interiors" onClick={handleNavClick}>
+                Interiors
+              </Link>
+              <Link to="/vastu" onClick={handleNavClick}>
+                Vastu
+              </Link>
             </div>
           </div>
         </nav>
 
+        {/* Search */}
         <div className={styles.searchContainer}>
           <input type="text" placeholder="Search..." />
           <span className={styles.searchIcon}>🔍</span>
