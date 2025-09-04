@@ -6,6 +6,7 @@ import ProjectShowcase from "../construction/ProjectShowCase";
 import WyChooseUs from "../construction/WyChooseUs";
 import TrustTimeline from "../construction/TrustTimeline";
 import ContactFooter from "../components/ContactFooter";
+import CTASection from "../components/CTASection";
 
 
 
@@ -20,6 +21,7 @@ const ConstructionPage = () => {
       <ProjectShowcase />      
       <TrustTimeline />
       <TestimonialSection />
+      <CTASection />
       <ContactFooter />
 
     </div>

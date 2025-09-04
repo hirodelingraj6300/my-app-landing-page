@@ -6,6 +6,7 @@ import PricingSection from '../interior/PricingSection.jsx';
 import ProjectShowcase from '../interior/ProjectShowcase.jsx'
 import TestimoninalSection from '../interior/TestimoninalSection.jsx';
 import ContactFooter from "../components/ContactFooter";
+import CTASection from "../components/CTASection";
 
 
 export default function InteriorPage() {
@@ -19,6 +20,7 @@ export default function InteriorPage() {
         <PricingSection />
         <ProjectShowcase />
         <TestimoninalSection />
+        <CTASection />
         <ContactFooter />
       </div>
 
