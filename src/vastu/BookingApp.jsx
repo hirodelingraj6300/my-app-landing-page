@@ -1,8 +1,8 @@
-// src/components/BookingApp.jsx
 import React, { useState, useEffect, useMemo } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./BookingApp.module.css";
+import { toast } from "react-toastify";
 import { sendOtp, verifyOtp, createBooking, getBookedSlots } from "../api"; // centralized api.js
 
 const TIME_SLOTS = [
@@ -24,7 +24,6 @@ const BookingApp = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", product: "", date: "", time: "" });
   const [otp, setOtp] = useState("");
   const [showOtpBox, setShowOtpBox] = useState(false);
-  const [msg, setMsg] = useState("");
   const [bookedSlots, setBookedSlots] = useState([]);
   const [fullyBooked, setFullyBooked] = useState(false);
   const [blockedDates, setBlockedDates] = useState([]);
@@ -35,6 +34,7 @@ const BookingApp = () => {
     [bookedSlots]
   );
 
+  // Load fully booked days
   useEffect(() => {
     const today = new Date();
     const next90 = [...Array(90)].map((_, i) => {
@@ -43,12 +43,16 @@ const BookingApp = () => {
       return d.toISOString().split("T")[0];
     });
 
-    Promise.all(next90.map((date) => getBookedSlots(date)
-      .then((d) => ({ date, full: (d?.bookedSlots?.length ?? 0) >= TIME_SLOTS.length }))
-      .catch(() => ({ date, full: false }))
-    )).then((res) => setBlockedDates(res.filter((r) => r.full).map((r) => r.date)));
+    Promise.all(
+      next90.map((date) =>
+        getBookedSlots(date)
+          .then((d) => ({ date, full: (d?.bookedSlots?.length ?? 0) >= TIME_SLOTS.length }))
+          .catch(() => ({ date, full: false }))
+      )
+    ).then((res) => setBlockedDates(res.filter((r) => r.full).map((r) => r.date)));
   }, []);
 
+  // Fetch slots for selected date
   useEffect(() => {
     if (!form.date) return setBookedSlots([]);
     getBookedSlots(form.date)
@@ -61,6 +65,7 @@ const BookingApp = () => {
       .catch(() => setBookedSlots([]));
   }, [form.date, form.time]);
 
+  // Handle input
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "date") return setForm((p) => ({ ...p, date: value, time: "" }));
@@ -70,29 +75,29 @@ const BookingApp = () => {
     if (name === "phone") setErr((p) => ({ ...p, phone: PHONE_REGEX.test(value) ? "" : "Invalid 10-digit number" }));
   };
 
+  // Submit form → request OTP
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMsg("");
 
     if (!form.name || !form.phone || !form.email || !form.product || !form.date || !form.time) {
-      setMsg("All fields are required."); return;
+      return toast.error("All fields are required.");
     }
     if (err.email || err.phone) return;
     if (fullyBooked || bookedSlots.includes(form.time)) {
-      setMsg("Selected slot is unavailable."); return;
+      return toast.error("Selected slot is unavailable.");
     }
 
     try {
-      const data = await sendOtp(form.email);
+      await sendOtp(form.email);
       setShowOtpBox(true);
-      setMsg("📩 OTP sent to your email.");
+      toast.info("📩 OTP sent to your email.");
     } catch {
-      setMsg("Server error. Try again.");
+      toast.error("Server error. Try again.");
     }
   };
 
+  // Verify OTP + create booking
   const handleVerifyOtp = async () => {
-    setMsg("");
     try {
       await verifyOtp(form.email, otp);
 
@@ -106,22 +111,26 @@ const BookingApp = () => {
       };
 
       await createBooking(payload);
-      setMsg("✅ Booking confirmed!");
-      setShowOtpBox(false);
-      setTimeout(() => window.location.reload(), 2500);
 
+      toast.success("✅ Booking confirmed!");
+
+      // Smart reset (no reload, no 404)
+      setTimeout(() => {
+        setForm({ name: "", phone: "", email: "", product: "", date: "", time: "" });
+        setOtp("");
+        setShowOtpBox(false);
+      }, 2000);
     } catch (err) {
-      setMsg(err.message || "Booking failed");
+      toast.error(err.message || "Booking failed");
     }
   };
 
   const handleResendOtp = async () => {
-    setMsg("");
     try {
       await sendOtp(form.email);
-      setMsg("📩 OTP resent.");
+      toast.info("📩 OTP resent.");
     } catch {
-      setMsg("Failed to resend OTP");
+      toast.error("Failed to resend OTP");
     }
   };
 
@@ -176,8 +185,6 @@ const BookingApp = () => {
             Submit & Request OTP
           </button>
         </form>
-
-        {msg && <p className={styles.msg}>{msg}</p>}
 
         {showOtpBox && (
           <div className={styles.overlay}>

@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
 import InteriorPage from "./pages/InteriorPage";
@@ -22,6 +24,8 @@ export default function App() {
         <Route path="/interiors" element={<InteriorPage />} />
         <Route path="/vastu" element={<VastuPage />} />
       </Routes>
+       {/* Toast container (works globally) */}
+      <ToastContainer position="top-right" autoClose={3000} />
     </Router>
   );
 }
