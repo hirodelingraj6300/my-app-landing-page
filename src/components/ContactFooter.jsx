@@ -2,10 +2,31 @@
 import React, { useState } from "react";
 import styles from "./ContactFooter.module.css";
 import { sendContact } from "../api"; // import from centralized api.js
+import validator from "validator";
 
-const isValidEmail = (email) =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) &&
-  !email.match(/^[a-z]{2,}\d*@gmail\.com$/i) === false;
+// ✅ Custom Email Validator (technical + business rules)
+const isValidEmail = (email) => {
+  if (!email) return false;
+
+  const trimmed = email.trim().toLowerCase();
+
+  // Step 1: Must be a valid email format
+  if (!validator.isEmail(trimmed)) return false;
+
+  // Step 2: Split into local part and domain
+  const [localPart, domain] = trimmed.split("@");
+
+  // Step 3: Allowed domains (extend as needed)
+  const allowedDomains = ["gmail.com", "yahoo.com", "outlook.com"];
+  if (!allowedDomains.includes(domain)) return false;
+
+  // Step 4: Business rules for local part
+  if (/^[a-z]{10,}$/.test(localPart)) return false; // reject pure gibberish like "aajsddadas"
+  if (localPart.split(".").length > 2) return false; // too many dots
+  if (/[^a-z0-9+._-]/i.test(localPart)) return false; // disallow weird chars
+
+  return true;
+};
 
 const isValidPhone = (phone) => /^[6-9]\d{9}$/.test(phone);
 

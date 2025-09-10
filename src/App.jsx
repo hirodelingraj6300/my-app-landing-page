@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ToastContainer } from "react-toastify";
@@ -18,7 +19,9 @@ export default function App() {
       <Header />
 
       {/* Routes */}
+     <ScrollToTop /> 
       <Routes>
+        
         <Route path="/" element={<LandingPage />} />
         <Route path="/construction" element={<ConstructionPage />} />
         <Route path="/interiors" element={<InteriorPage />} />

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://my-app-landing-page-jade.vercel.app/</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Construction Page -->
+  <url>
+    <loc>https://my-app-landing-page-jade.vercel.app/construction</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Interiors Page -->
+  <url>
+    <loc>https://my-app-landing-page-jade.vercel.app/interiors</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Vastu Page -->
+  <url>
+    <loc>https://my-app-landing-page-jade.vercel.app/vastu</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

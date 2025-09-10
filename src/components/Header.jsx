@@ -97,8 +97,8 @@ const Header = () => {
 
         {/* Search */}
         <div className={styles.searchContainer}>
-          <input type="text" placeholder="Search..." />
-          <span className={styles.searchIcon}>🔍</span>
+          {/* <input type="text" placeholder="Search..." /> */}
+          {/* <span className={styles.searchIcon}>🔍</span> */}
         </div>
       </div>
     </header>
