@@ -1,0 +1,102 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("/contact_img/gall_3.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.content {
+  text-align: center;
+  color: #fff;
+  max-width: 750px;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* 📱 Mobile (≤767px) */
+/* ============================= */
+@media (max-width: 767px) {
+  .hero {
+    height: 70vh; /* smaller hero for mobile */
+    background-position: center top;
+  }
+
+  .title {
+    font-size: 1.8rem; /* smaller title */
+    line-height: 1.3;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .overlay {
+    padding: 1.2rem;
+  }
+
+  .content {
+    max-width: 90%;
+  }
+}
+
+/* ============================= */
+/* 📱 Tablet (768px – 1023px) */
+/* ============================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    height: 80vh;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    max-width: 600px;
+  }
+}
+
+/* ============================= */
+/* 💻 Laptop / Desktop (≥1024px) */
+/* ============================= */
+@media (min-width: 1024px) {
+  .hero {
+    height: 100vh;
+  }
+
+  .title {
+    font-size: 2.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}

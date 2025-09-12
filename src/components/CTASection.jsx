@@ -9,9 +9,9 @@ export default function CTASection() {
         <p className={styles.sub}>
           Let’s create something extraordinary together. Tell us about your project and timeline.
         </p>
-        <a href="#contact" className={styles.btn}>
+        {/* <a href="#contact" className={styles.btn}>
           Get a Free Consultation
-        </a>
+        </a> */}
       </div>
     </section>
   );

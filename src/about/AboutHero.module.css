@@ -1,0 +1,69 @@
+.hero {
+  position: relative;
+  height: 120vh;
+  background: url("/gallery_img/gall_const_2.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #e0e0e0;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* ✅ Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    height: 100vh;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+    padding: 0rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+}

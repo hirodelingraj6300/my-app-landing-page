@@ -29,9 +29,9 @@ export default function ProjectShowcase() {
 
               <div className={styles.body}>
                 <h3>{p.name}</h3>
-                <a href="#" className={styles.btn}>
+                {/* <a href="#" className={styles.btn}>
                   View Case Study
-                </a>
+                </a> */}
               </div>
             </article>
           ))}

@@ -1,0 +1,141 @@
+.timeline {
+  padding: 5rem 2rem;
+  background: #f9f9f9;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: #222;
+}
+
+.timelineWrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.timelineWrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0077b6, #0096c7);
+  border-radius: 2px;
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+  width: 100%;
+}
+
+.left {
+  flex-direction: row;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
+
+.content {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  z-index: 2;
+}
+
+.year {
+  display: inline-block;
+  font-weight: 700;
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #222;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.imageWrapper {
+  width: 45%;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Tablet */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .content {
+    width: 48%;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .imageWrapper {
+    width: 48%;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+  .timelineWrapper {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .timelineWrapper::before {
+    width: 3px;
+  }
+
+  .content,
+  .imageWrapper {
+    width: 48%;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}

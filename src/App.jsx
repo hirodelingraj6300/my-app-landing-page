@@ -10,6 +10,9 @@ import LandingPage from "./pages/LandingPage";
 import InteriorPage from "./pages/InteriorPage";
 import ConstructionPage from "./pages/ConstructionPage";
 import VastuPage from "./pages/VastuPage";
+import AboutPage from "./pages/AboutPage";
+import GalleryPage from "./pages/GalleryPage";
+import ContactPage from "./pages/ContactPage";
 
 
 export default function App() {
@@ -26,6 +29,9 @@ export default function App() {
         <Route path="/construction" element={<ConstructionPage />} />
         <Route path="/interiors" element={<InteriorPage />} />
         <Route path="/vastu" element={<VastuPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
        {/* Toast container (works globally) */}
       <ToastContainer position="top-right" autoClose={3000} />

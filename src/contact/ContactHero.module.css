@@ -1,0 +1,77 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("/about_img/cont_img_4.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.content {
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+/* ✅ Tablet */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    max-width: 600px;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh; /* reduce height for small screens */
+  }
+
+  .overlay {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .content {
+    max-width: 90%;
+  }
+}

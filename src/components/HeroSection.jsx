@@ -61,12 +61,12 @@ export default function HeroSection() {
               <h1>{s.title}</h1>
               <p>{s.text}</p>
               <div className={styles.heroActions}>
-                <a href="#contact" className={`${styles.btn} ${styles.btnPrimary}`}>
+                {/* <a href="#contact" className={`${styles.btn} ${styles.btnPrimary}`}>
                   Start Your Project
                 </a>
                 <a href="#projects" className={`${styles.btn} ${styles.btnSecondary}`}>
                   View Our Work
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

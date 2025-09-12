@@ -1,0 +1,83 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  /* ✅ Removed display:flex, justify-content, align-items */
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh; /* ✅ Keeps it inside screen */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease;
+  object-fit: contain; /* ✅ Makes sure image isn’t cut */
+}
+
+.closeBtn {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.closeBtn:hover {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+/* ✅ Mobile adjustments */
+@media (max-width: 768px) {
+  .lightbox {
+    max-width: 95%;
+    max-height: 85%;
+  }
+
+  .closeBtn {
+    top: -30px;
+    right: -30px;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

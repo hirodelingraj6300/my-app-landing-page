@@ -61,9 +61,9 @@ const Header = () => {
           ref={menuRef}
         >
           <Link to="/" onClick={handleNavClick}>Home</Link>
-          <a href="#gallery" onClick={handleNavClick}>Gallery</a>
-          <a href="#about" onClick={handleNavClick}>About Us</a>
-          <a href="#contact" onClick={handleNavClick}>Contact Us</a>
+          <Link to="/gallery" onClick={handleNavClick}>Gallery</Link>
+          <Link to="/about" onClick={handleNavClick}>About Us</Link>
+          <Link to="/contact" onClick={handleNavClick}>Contact Us</Link>
 
           {/* Dropdown */}
           <div className={styles.dropdown} ref={dropdownRef}>
@@ -91,6 +91,7 @@ const Header = () => {
               <Link to="/vastu" onClick={handleNavClick}>
                 Vastu
               </Link>
+              
             </div>
           </div>
         </nav>

@@ -23,7 +23,7 @@ export default function ServicesSection() {
               <img src={s.img} alt={s.title} />
               <div className={styles.body}>
                 <h3>{s.title}</h3>
-                <a href="#contact" className={styles.btn}>Learn More</a>
+                {/* <a href="#contact" className={styles.btn}>Learn More</a> */}
               </div>
             </article>
           ))}
