@@ -55,7 +55,7 @@
 /* ✅ Mobile */
 @media (max-width: 768px) {
   .hero {
-    height: 80vh; /* reduce height for small screens */
+    height: 100vh; /* reduce height for small screens */
   }
 
   .overlay {

@@ -3,6 +3,8 @@ import ContactHero from "../contact/ContactHero";
 import ContactForm from "../contact/ContactForm";
 import ContactInfo from "../contact/ContactInfo";
 import ContactMap from "../contact/ContactMap";
+import ContactFooter from "../components/ContactFooter";
+
 
 const ContactPage = () => {
   return (
@@ -11,6 +13,7 @@ const ContactPage = () => {
       <ContactForm />
       <ContactInfo />
       <ContactMap />
+      <ContactFooter />
     </>
   );
 };
