@@ -12,7 +12,7 @@ export default function HeroSection() {
           {/* <a href="#contact" className="btn btn-primary">Get Free Consultation</a>
           <a href="#gallery" className="btn btn-outline">View Our Work</a> */}
         </div>
-        <div className={styles.scrollIndicator} aria-hidden="true">↓</div>
+        {/* <div className={styles.scrollIndicator} aria-hidden="true"></div> */}
       </div>
     </section>
   );

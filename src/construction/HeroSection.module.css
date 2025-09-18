@@ -1,40 +1,45 @@
-/* components/construction/HeroSection.module.css */
 .hero {
   height: 100vh;
+  min-height: 520px;
   background: url("/Const_img/build_8.jpg") no-repeat center/cover;
   position: relative;
+
+  /* ✅ make parent flex container */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .heroOverlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  inset: 0;
+  z-index: 0;
 }
 
 .heroContent {
-  text-align: center;
+  position: relative;
+  z-index: 1; /* ✅ stays above overlay */
   color: #fff;
   max-width: 800px;
   padding: 20px;
 }
 
 .heroContent h1 {
-  font-size: 3rem;
+  font-size: clamp(28px, 4.5vw, 56px);
   margin-bottom: 15px;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7);
+  line-height: 1.2;
 }
 
 .heroContent p {
-  font-size: 1.2rem;
+  font-size: clamp(16px, 2vw, 20px);
   margin-bottom: 25px;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+  line-height: 1.5;
 }
 
 .ctaBtn {
@@ -50,4 +55,41 @@
 
 .ctaBtn:hover {
   background: #ea580c;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .heroContent h1 {
+    font-size: clamp(24px, 4vw, 42px);
+  }
+
+  .heroContent p {
+    font-size: clamp(15px, 1.8vw, 18px);
+    max-width: 600px;
+    margin: 0 auto 20px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 480px;
+    padding: 0 1.2rem;
+  }
+
+  .heroContent h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .heroContent p {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .ctaBtn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 12px;
+  }
 }

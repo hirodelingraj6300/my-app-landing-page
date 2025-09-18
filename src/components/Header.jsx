@@ -42,10 +42,11 @@ const Header = () => {
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.navbarContainer}>
         {/* Logo */}
-        <div className={styles.logo}>
-          <img src="/img/logo_43.png" alt="" className={styles.logoImg} />
-          <span> Constructions</span>
-        </div>
+        <Link to="/" onClick={handleNavClick} className={styles.logo}>
+  <img src="/img/logo_43.png" alt="Logo" className={styles.logoImg} />
+  <span>Constructions</span>
+</Link>
+
 
         {/* Mobile Hamburger */}
         <button

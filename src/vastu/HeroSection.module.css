@@ -1,35 +1,36 @@
 .hero {
   position: relative;
   height: 100vh;
+  min-height: 520px;
   background: url("/vastu_img/vastu_3.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.7); /* dark overlay */
+  /* ✅ center content */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 0 20px;
 }
 
-.content {
-  text-align: center;
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7); /* dark overlay */
+  z-index: 0;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1; /* ✅ above overlay */
   color: #fff;
   max-width: 800px;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: clamp(28px, 4.5vw, 56px);
   font-weight: 700;
   line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* ✅ readability */
 }
 
 .title span {
@@ -38,8 +39,9 @@
 
 .subtitle {
   margin: 20px 0;
-  font-size: 1.2rem;
+  font-size: clamp(16px, 2vw, 20px);
   line-height: 1.6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .cta {
@@ -66,11 +68,13 @@
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
   .title {
-    font-size: 2.5rem;
+    font-size: clamp(24px, 4vw, 42px);
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: clamp(15px, 1.8vw, 18px);
+    max-width: 600px;
+    margin: 15px auto;
   }
 
   .cta {
@@ -79,26 +83,26 @@
   }
 }
 
-/* Mobile (≤768px) */
-@media (max-width: 768px) {
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
   .hero {
-    height: 80vh; /* reduce height for smaller screens */
-    padding: 20px;
+    min-height: 480px;
+    padding: 0 1.2rem;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 32px;
     line-height: 1.3;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 15px;
     margin: 15px 0;
   }
 
   .cta {
-    width: 100%; /* full width button for mobile */
-    padding: 12px;
+    width: 100%; /* ✅ full width on mobile */
     font-size: 1rem;
+    padding: 12px;
   }
 }
